@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript Starter Docs</title>
+  <meta name="description" content="A beginner-friendly JavaScript reference, written as a freeCodeCamp Responsive Web Design technical documentation project and redesigned.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="navbar" aria-label="Documentation sections">
+    <header>
+      <span class="logo" aria-hidden="true">JS</span>
+      <div><strong>JavaScript Starter</strong><small>Docs by Khaled Agina</small></div>
+    </header>
+    <ul>
+      <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+      <li><a class="nav-link" href="#Variables">Variables</a></li>
+      <li><a class="nav-link" href="#Data_Types">Data Types</a></li>
+      <li><a class="nav-link" href="#Functions">Functions</a></li>
+      <li><a class="nav-link" href="#Arrays_and_Objects">Arrays and Objects</a></li>
+      <li><a class="nav-link" href="#Conditions_and_Loops">Conditions and Loops</a></li>
+      <li><a class="nav-link" href="#Working_with_the_DOM">Working with the DOM</a></li>
+      <li><a class="nav-link" href="#Reference">Reference</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-doc">
+    <div class="intro-banner">
+      <p class="eyebrow">Beginner reference</p>
+      <h1>JavaScript Starter Docs</h1>
+      <p>The core ideas you need to start writing JavaScript for the web, with short examples you can paste into your browser console.</p>
+    </div>
+
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>JavaScript is the programming language of the web. It runs in every browser and lets a page react to what people do: clicks, typing, scrolling. These notes cover the basics I learned while studying front-end development.</p>
+      <p>To try any example, open your browser, press <code>F12</code>, choose the Console tab, and paste the code.</p>
+      <p>Before you start, it helps to know:</p>
+      <ul>
+        <li>Basic HTML structure (tags, attributes).</li>
+        <li>Basic CSS (selectors, properties).</li>
+        <li>How to open a file in a browser and a code editor.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Variables">
+      <header>Variables</header>
+      <p>A variable is a named box that holds a value. Use <code>const</code> by default and <code>let</code> when the value will change. Avoid <code>var</code> in new code.</p>
+      <pre><code>const city = "Mansoura";
+let visits = 1;
+visits = visits + 1;
+console.log(city, visits); // Mansoura 2</code></pre>
+      <p>Good names say what the value means. Use camelCase, like <code>totalPrice</code>.</p>
+    </section>
+
+    <section class="main-section" id="Data_Types">
+      <header>Data Types</header>
+      <p>Every value has a type. The ones you will use most often:</p>
+      <ul>
+        <li><code>string</code>: text, such as <code>"hello"</code>.</li>
+        <li><code>number</code>: integers and decimals, such as <code>42</code> or <code>3.14</code>.</li>
+        <li><code>boolean</code>: <code>true</code> or <code>false</code>.</li>
+        <li><code>undefined</code> and <code>null</code>: "no value yet" and "intentionally empty".</li>
+      </ul>
+      <pre><code>typeof "hi";   // "string"
+typeof 10;     // "number"
+typeof true;   // "boolean"</code></pre>
+      <p class="tip"><strong>Tip:</strong> compare with <code>===</code>, not <code>==</code>. It does not convert types behind your back.</p>
+    </section>
+
+    <section class="main-section" id="Functions">
+      <header>Functions</header>
+      <p>A function is a reusable block of code. It can take inputs (parameters) and give back an output with <code>return</code>.</p>
+      <pre><code>function add(a, b) {
+  return a + b;
+}
+
+const double = (n) => n * 2; // arrow function
+
+console.log(add(2, 3)); // 5
+console.log(double(4)); // 8</code></pre>
+      <p>Keep each function focused on one job. If you cannot name it clearly, it probably does too much.</p>
+    </section>
+
+    <section class="main-section" id="Arrays_and_Objects">
+      <header>Arrays and Objects</header>
+      <p>An array is an ordered list. An object groups related values under named keys.</p>
+      <pre><code>const skills = ["HTML", "CSS", "JavaScript"];
+skills.push("React");
+
+const student = { name: "Khaled", year: 2 };
+console.log(skills.length, student.name); // 4 "Khaled"</code></pre>
+      <p>Useful array methods:</p>
+      <ul>
+        <li><code>map</code> builds a new array by transforming each item.</li>
+        <li><code>filter</code> keeps only the items that pass a test.</li>
+        <li><code>find</code> returns the first item that passes a test.</li>
+      </ul>
+      <pre><code>[1, 2, 3].map(n => n * 10);      // [10, 20, 30]
+[1, 2, 3, 4].filter(n => n % 2); // [1, 3]</code></pre>
+    </section>
+
+    <section class="main-section" id="Conditions_and_Loops">
+      <header>Conditions and Loops</header>
+      <p>Use <code>if</code> to make decisions and loops to repeat work.</p>
+      <pre><code>const score = 82;
+if (score >= 90) {
+  console.log("A");
+} else if (score >= 80) {
+  console.log("B");
+} else {
+  console.log("Keep going");
+}
+
+for (let i = 1; i <= 3; i++) {
+  console.log("Round", i);
+}</code></pre>
+      <p>When you loop over a list, prefer <code>for...of</code> or an array method over a manual counter.</p>
+    </section>
+
+    <section class="main-section" id="Working_with_the_DOM">
+      <header>Working with the DOM</header>
+      <p>The DOM is the page as JavaScript sees it. You select an element, then change it or listen for events.</p>
+      <pre><code>const button = document.querySelector("button");
+button.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});</code></pre>
+      <p>Always check that the element exists before using it, and keep style changes in CSS classes rather than inline styles.</p>
+    </section>
+
+    <section class="main-section" id="Reference">
+      <header>Reference</header>
+      <p>Where to go next:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN JavaScript Guide</a>, the best free reference.</li>
+        <li><a href="https://www.freecodecamp.org/learn" target="_blank" rel="noopener">freeCodeCamp</a>, free interactive lessons.</li>
+        <li><a href="https://javascript.info/" target="_blank" rel="noopener">javascript.info</a>, a clear modern tutorial.</li>
+      </ul>
+      <p class="credit">These notes were written by <a href="https://github.com/khaledagina" target="_blank" rel="noopener">Khaled Agina</a> as a freeCodeCamp certification project.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
